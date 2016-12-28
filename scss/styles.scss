@@ -1,0 +1,36 @@
+@import 'normalize';
+@import 'mixins';
+
+* {
+	box-sizing: border-box;
+}
+body {
+	height: 100vh;
+	font-family: 'Open Sans';
+	background: radial-gradient(circle, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 68%, rgba(182,141,76,1) 100%);
+}
+.wrapper{
+	margin: 10vh auto;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+}
+.fridge{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 300px;
+	width: 200px;
+	border-radius: 30px;
+	border: 14px solid #062341;
+	background: #e3e3e3;
+	.back-wall{
+		width: 160px;
+		height: 250px;
+		background: #fff;
+		border: 17px solid #d4d4d4;
+		border-radius: 15px;
+	}
+}
