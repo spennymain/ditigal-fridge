@@ -7,6 +7,7 @@
  */
 /* Document
    ========================================================================== */
+@import url(http://fonts.googleapis.com/css?family=Oleo+Script);
 html {
   font-family: sans-serif;
   /* 1 */
@@ -450,6 +451,10 @@ template {
   box-sizing: border-box;
 }
 
+:root {
+  --rotation-angle: 180deg;
+}
+
 body {
   height: 100vh;
   font-family: 'Open Sans';
@@ -457,7 +462,7 @@ body {
 }
 
 .wrapper {
-  margin: 10vh auto;
+  margin: 10px auto;
   text-align: center;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -468,6 +473,18 @@ body {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-family: 'Oleo Script', cursive;
+  color: #fff;
+  font-weight: 400;
+  font-size: 2em;
+  margin-bottom: 5px;
 }
 
 .fridge {
@@ -477,6 +494,7 @@ body {
   border-radius: 30px;
   border: 14px solid #062341;
   background: #e3e3e3;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
 }
 
 .fridge .back-wall {
@@ -488,7 +506,7 @@ body {
   position: absolute;
   width: 160px;
   height: 250px;
-  background: #fff;
+  background: #ececec;
   border: 17px solid #d4d4d4;
   border-radius: 15px;
   margin: 0 auto;
@@ -687,11 +705,45 @@ body {
 }
 
 .fridge .shelf .potato {
+  position: absolute;
+  top: -23px;
+  right: 4px;
   width: 20px;
   height: 20px;
   background: #e6dd92;
   border: 1px solid #d2c880;
   border-radius: 50%;
+}
+
+.fridge .shelf .potato:nth-child(2) {
+  top: -26px;
+  right: 10px;
+}
+
+.fridge .shelf .potato:nth-child(3) {
+  top: -30px;
+  right: 20px;
+}
+
+.fridge .shelf .potato:nth-child(4) {
+  top: -22px;
+  right: 25px;
+}
+
+.fridge .shelf .potato:nth-child(5) {
+  top: -23px;
+  right: 44px;
+}
+
+.fridge .shelf .potato:nth-child(6) {
+  top: -23px;
+  right: 58px;
+}
+
+.fridge .shelf .potato:nth-child(7) {
+  top: -34px;
+  right: 40px;
+  z-index: -1;
 }
 
 .fridge .one {
@@ -704,4 +756,60 @@ body {
 
 .fridge .three {
   top: 75%;
+}
+
+.fridge .door {
+  position: absolute;
+  top: -14px;
+  left: -14px;
+  height: 300px;
+  width: 200px;
+  border-radius: 30px;
+  border: 14px solid #062341;
+  background: #b1b1b1;
+  -webkit-transform: perspective(1200px) rotateY(var(--rotation-angle));
+          transform: perspective(1200px) rotateY(var(--rotation-angle));
+  -webkit-transform-origin: 100% 50%;
+      -ms-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+}
+
+.fridge .door:before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 30px;
+  background: #fff;
+  border-radius: 10px;
+  right: -17px;
+  top: 30px;
+}
+
+.fridge .door:after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 30px;
+  background: #fff;
+  border-radius: 10px;
+  right: -17px;
+  bottom: 30px;
+}
+
+.fridge .door .handle {
+  position: absolute;
+  width: 6px;
+  height: 60px;
+  background: #fff;
+  border-radius: 10%;
+  top: 38%;
+  left: 13px;
+}
+
+input {
+  margin-bottom: 20px;
+}
+
+.hidden {
+  display: none;
 }
