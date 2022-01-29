@@ -9,7 +9,7 @@ function handleUpdate(){
 
 input.addEventListener('mousemove', handleUpdate);
 function init(){
-	document.documentElement.style.setProperty('--rotation-angle', '180deg');
+	document.documentElement.style.setProperty('--rotation-angle', '0deg');
 	checkFlipAngle(parseInt(document.documentElement.style.getPropertyValue('--rotation-angle')));
 }
 

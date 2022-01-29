@@ -452,17 +452,19 @@ template {
 }
 
 :root {
-  --rotation-angle: 180deg;
+  --rotation-angle: 0deg;
 }
 
 body {
   height: 100vh;
   font-family: 'Open Sans';
   background: radial-gradient(circle, #f3e2c7 0%, #c19e67 68%, #b68d4c 100%);
+	display: flex;
+	justify-content: center;
 }
 
 .wrapper {
-  margin: 10px auto;
+  margin: 100px auto;
   text-align: center;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -476,7 +478,7 @@ body {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-bottom: 15px;
+  margin-bottom: 100px;
 }
 
 h2 {
@@ -489,8 +491,8 @@ h2 {
 
 .fridge {
   position: relative;
-  height: 300px;
-  width: 200px;
+  height: 2000px;
+  width: 600px;
   border-radius: 30px;
   border: 14px solid #062341;
   background: #e3e3e3;
@@ -762,8 +764,8 @@ h2 {
   position: absolute;
   top: -14px;
   left: -14px;
-  height: 300px;
-  width: 200px;
+  height: 2000px;
+  width: 600px;
   border-radius: 30px;
   border: 14px solid #062341;
   background: #b1b1b1;
@@ -804,6 +806,17 @@ h2 {
   border-radius: 10%;
   top: 38%;
   left: 13px;
+}
+
+.fridge .door .photos {
+	display: flex;
+	justify-content: space-evenly;
+	padding: 10%;
+}
+.fridge .door .photos img {
+  border-radius: 25%;
+	width: 100px;
+	height: 100px;
 }
 
 input {

@@ -2,13 +2,39 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>A peek into a fridge</title>
+	<title>ditigal-fridge</title>
 	<link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body id="homepage">
+		<script src="js/trianglify.min.js"></script>
+		<script>
+			function addTriangleTo(target) {
+				var pattern = Trianglify({
+					width: window.innerWidth,
+					height: 3000,
+				});
+
+				target.style['background-image'] = 'url(' + pattern.png() + ')';
+				target.style['background-size'] = 'cover';
+				target.style['-webkit-background-size'] = 'cover';
+				target.style['-moz-background-size'] = 'cover';
+				target.style['-o-background-size'] = 'cover';
+			}
+
+			var resizeTimer;
+			window.addEventListener("resize", function () {
+				clearTimeout(resizeTimer);
+				resizeTimer = setTimeout(function() {
+					addTriangleTo(homepage);
+				}, 4000);
+			})
+
+			addTriangleTo(homepage);
+		</script>
+
 	<div class="wrapper">
-		<h2>Slide to Open/Close</h2>
-		<input type="range" name="rotation-angle" min="0" max="180" data-sizing="deg" value="180">
+		<!--<h2>Slide to Open/Close</h2>
+		<input type="range" name="rotation-angle" min="0" max="180" data-sizing="deg" value="0">-->
 		<div class="fridge">
 			<div class="back-wall"></div>
 			<div class="shelf one">
@@ -41,6 +67,11 @@
 			</div>
 			<div class="door">
 				<div class="handle"></div>
+				<div class="photos">
+					<!--<img src=assets/vamp.jpg></img>
+					<img src=assets/vamp.jpg></img>
+					<img src=assets/vamp.jpg></img>-->
+				</div>
 			</div>
 		</div>
 	</div>
